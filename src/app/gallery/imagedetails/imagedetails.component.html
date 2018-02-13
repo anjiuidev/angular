@@ -1,0 +1,11 @@
+<a class="btn btn-info pull-right text-white" (click)="goBack()">Go Back</a>
+<h3>Image Details</h3>
+<br>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Name: </strong>{{singleImage.caption}}</h5>
+    <p class="card-text"><strong>Category: </strong>{{singleImage.category}}</p>
+  </div>
+  <img class="card-img-top" [src]="singleImage.url" alt="singleImage.caption">
+</div>
+<br>

@@ -1,0 +1,4 @@
+.breadcrumb .active {
+  color: #333;
+  pointer-events: none;
+}

@@ -1,0 +1,7 @@
+<h3>Angular Google Maps</h3>
+<br>
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" (mapClick)="chooseLocation($event)">
+  <agm-marker *ngFor="let marker of markers; let i = index;" (markerClick)="clickedMarker(marker.name,i)" [markerDraggable]="marker.draggable" (dragEnd)="markerDragEnd(marker, $event)" [latitude]="marker.lat" [longitude]="marker.lng">
+      <agm-info-window><strong (blur)="editmapTitle(marker.name,i)" contenteditable="true">{{marker.name}}</strong></agm-info-window>
+  </agm-marker>
+</agm-map>

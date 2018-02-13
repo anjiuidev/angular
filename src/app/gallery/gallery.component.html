@@ -1,0 +1,10 @@
+<h3>Images Gallery</h3>
+<br>
+<div class="row">
+  <div class="col-sm-3" *ngFor="let image of Images" style="margin-bottom: 20px; cursor:pointer;">
+    <a class="card" routerLink="{{image.id}}">
+      <img class="card-img-top" [src]="image.url" class="img-thumbnail" alt="{{image.caption}}">
+      <h5 style="margin:5px; text-align:center;">{{image.caption}}</h5>
+    </a>
+  </div>
+</div>

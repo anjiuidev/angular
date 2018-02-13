@@ -1,0 +1,68 @@
+<form class="card-header" style="margin-bottom:25px;">
+  <input type="search" placeholder="Search for Git User" [(ngModel)]="username" class="form-control" name="username" (keyup)="SearchUser()">
+</form>
+<div *ngIf="user">
+  <div class="card border-primary mb-3">
+    <div class="card-header">
+      <h3>{{user.login}}</h3>
+    </div>
+    <div class="card-body text-primary">
+      <div class="row">
+        <div class="col-md-3">
+          <img [src]="user.avatar_url" [alt]="user.login" class="img-fluid rounded" style="padding:5px; border:1px solid #ccc;">
+        </div>
+        <div class="col-md-9">
+          <div class="status" style="margin-bottom:20px;">
+            <span class="badge badge-primary">{{user.public_repos}} Public Repos</span>
+            <span class="badge badge-success">{{user.public_gists}} Public Gists</span>
+            <span class="badge badge-info">{{user.followers}} Followers</span>
+            <span class="badge badge-warning">{{user.following}} Following</span>
+            <span class="badge badge-danger">{{user.type}} Type</span>
+          </div>
+          <div class="list-group">
+            <a class="list-group-item list-group-item-action">
+              <strong>Username:</strong> {{user.login}}
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <strong>Location:</strong> {{user.location}}
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <strong>Email:</strong> {{user.email}}
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <strong>Blog:</strong> {{user.blog}}
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <strong>Member Since:</strong> {{user.created_at}}
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <strong>Site Admin:</strong> {{user.site_admin}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="repos">
+  <div class="card border-primary mb-3">
+    <div class="card-header">
+      <h3>Repos</h3>
+    </div>
+    <div class="card-body text-primary">
+      <div *ngFor="let repo of repos">
+      <div class="row">
+        <div class="col-md-9">
+          <h4><a [href]="repo.html_url" target="_blank">{{repo.name}}</a></h4>
+          <p>{{repo.description}}</p>
+        </div>
+        <div class="col-md-3">
+          <span class="badge badge-primary">{{repo.watchers}} Watchers</span>
+          <span class="badge badge-primary">{{repo.forks}} Forks</span>
+        </div>
+      </div>
+      <hr>
+    </div>
+    </div>
+  </div>
+</div>

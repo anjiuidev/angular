@@ -1,0 +1,26 @@
+<div class="map-block">
+  <h3>
+    Map</h3>
+  <br>
+  <div class="row">
+    <div class="col-sm-8">
+      <div id="map"></div>
+    </div>
+    <div class="col-sm-4">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Activity Name :</strong> {{activityName}}
+        </li>
+        <li class="list-group-item">
+          <strong>Activity Comments :</strong> {{activityComments}}
+        </li>
+        <li class="list-group-item">
+          <strong>Activity Date :</strong> {{activityDate | date : 'longDate'}}
+        </li>
+        <li class="list-group-item">
+          <strong>Activity Distance :</strong> {{activityDistance}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

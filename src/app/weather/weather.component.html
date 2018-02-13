@@ -1,0 +1,13 @@
+<h3>Angular Weather</h3>
+<br>
+<div class="row">
+  <div class="col-sm-4 col-md-3"></div>
+  <div class="col-sm-3 col-md-9">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let weatherItem of weatherItems">
+        <h4><strong>City:</strong> {{weatherItem.city}} <span class="pull-right"><strong>Temperature: </strong> {{weatherItem.temp}}<sup>o</sup>C</span></h4>
+        <p><strong>Info: </strong>{{weatherItem.info}}</p>
+      </li>
+    </ul>
+  </div>
+</div>

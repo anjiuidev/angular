@@ -1,0 +1,21 @@
+<h3>My Runs</h3>
+<h5> You've logged <strong>{{ totalDistance }}</strong> Total Miles over <strong>{{totalActivities}}</strong> since <strong>{{firstDate | date: 'longDate'}}</strong> </h5>
+<br>
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Comments</th>
+      <th>Date</th>
+      <th>Distance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let activity of activities" style="cursor:pointer;" routerLink="{{activity.id}}">
+      <td>{{activity.name}}</td>
+      <td>{{activity.comments}}</td>
+      <td>{{activity.date | date: 'yyyy-MM-dd'}}</td>
+      <td>{{activity.distance}}</td>
+    </tr>
+  </tbody>
+</table>

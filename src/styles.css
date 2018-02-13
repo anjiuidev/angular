@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+.flash-messages
+{
+    position: fixed;
+    top: 50px;
+    right: 0;
+    max-width: 400px;
+}
+.flash-messages p{
+    margin: 0;
+}
+.flash-message{
+    transform: translateX(100%);
+    animation: animate 0.3s forwards ease-in-out;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+@keyframes animate {
+    to{
+        transform: translateX(0%);
+    }
+}
+.theme-block .arc path:hover{
+    opacity: 0.8;
+}
+.theme-block .arc path{
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+.theme-block .arc path.active{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}

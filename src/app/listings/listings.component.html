@@ -1,0 +1,9 @@
+<p>
+  listings works!
+</p>
+{{listings}}
+<ul>
+    <li class="text" *ngFor="let listing of listings | async">
+      {{listing.title}}
+    </li>
+  </ul>

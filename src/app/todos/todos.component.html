@@ -1,0 +1,21 @@
+<div *ngIf="!editmode">
+  <h3>Add Todo</h3>
+  <input type="text" class="form-control" [(ngModel)]="todo" name="todo" (keyup.enter)="addTodo()">
+</div>
+<div *ngIf="editmode">
+  <h3>Edit Todo</h3>
+  <input type="text" class="form-control" [(ngModel)]="todo" name="todo" (keyup.enter)="updateTodo()">
+</div>
+<br>
+<br>
+<h3>Todos List</h3>
+<ul class="list-group" *ngFor="let todo of todos">
+  <li class="list-group-item list-group-item-action">{{todo.text}}
+    <div class="pull-right">
+      <button type="button" class="btn btn-warning" (click)="deleteTodo(todo.text)">Delete</button>
+      <button type="button" class="btn btn-primary" (click)="editTodo(todo.text)">Edit</button>
+    </div>
+  </li>
+</ul>
+<br>
+<br>

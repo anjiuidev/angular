@@ -1,0 +1,8 @@
+.map-block {
+  padding: 25px;
+  background: #f7f7f7;
+}
+
+#map {
+  height: 400px;
+}
